@@ -10,16 +10,15 @@
 # limitations under the License.
 # ==============================================================================
 
-from mmwave.dataloader.radars import TI as ti
+from mmwave.dataloader.radars import TI
 from mmwave.tracking import ekf
-from mmwave.tracking import gtrack_visualize
 import time
 import numpy as np
 
 if __name__ == '__main__':
 
     tracker = ekf.EKF()
-    radar = ti.TI(cli_loc='COM23', data_loc='COM22', mode=1)
+    radar = TI(cli_loc='COM23', data_loc='COM22', mode=1)
     radar._initialize()
 
     #GTRACK_visualize.create()
@@ -36,8 +35,8 @@ if __name__ == '__main__':
             snrs = pc['snr']
             print(len(ranges))
         except:
-            print("readfiles")
-            continue
+            #print("readfiles")
+            break
         
         if data is not None:
             print(type(data),data.shape)

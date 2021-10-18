@@ -272,9 +272,9 @@ class DCA1000:
             ndarray: Reformatted frame of raw data of shape (num_chirps, num_rx, num_samples)
 
         """
-        ret = np.zeros(len(raw_frame) // 2, dtype=complex)
+        ret = np.zeros(len(raw_frame) // 2, dtype=complex)     #shape(raw_frame/2,)
 
         # Separate IQ data
-        ret[0::2] = raw_frame[0::4] + 1j * raw_frame[2::4]
+        ret[0::2] = raw_frame[0::4] + 1j * raw_frame[2::4]      # 每连续四个数据算一个 IQ值， （I实，I虚）（Q实，Q虚）
         ret[1::2] = raw_frame[1::4] + 1j * raw_frame[3::4]
         return ret.reshape((num_chirps, num_rx, num_samples))

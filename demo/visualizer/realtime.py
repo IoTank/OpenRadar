@@ -14,7 +14,7 @@ import numpy as np
 import mmwave.dsp as dsp
 import mmwave.clustering as clu
 from mmwave.dataloader import DCA1000
-from demo.Lab0008.lab0008_visualize import ellipse_visualize
+from visualize import ellipse_visualize
 
 import matplotlib.pyplot as plt
 
@@ -50,8 +50,9 @@ singFrameView = False
 
 if __name__ == '__main__':
     ims = []
-    max_size = 0
-    dca = DCA1000()
+    max_size = 0   # def __init__(self, static_ip='192.168.33.30', adc_ip='192.168.33.180',
+                 #data_port=4098, config_port=4096):
+    dca = DCA1000(data_port=22,config_port=23)
     
     # (1.5) Required Plot Declarations
     if plot2DscatterXY or plot2DscatterXZ:

@@ -15,7 +15,7 @@ import numpy as np
 import mmwave.dsp as dsp
 import mmwave.clustering as clu
 from mmwave.dataloader import DCA1000
-from demo.visualizer.visualize import ellipse_visualize
+from visualize import ellipse_visualize
 
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D

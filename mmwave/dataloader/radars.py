@@ -40,8 +40,8 @@ class TI:
 
     """
 
-    def __init__(self, sdk_version=2.0, cli_loc='COM6', cli_baud=115200,
-                 data_loc='COM5', data_baud=921600, num_rx=4, num_tx=2,
+    def __init__(self, sdk_version=2.0, cli_loc='COM22', cli_baud=115200,
+                 data_loc='COM23', data_baud=921600, num_rx=4, num_tx=2,
                  verbose=False, connect=True, mode=0):
         super(TI, self).__init__()
         self.connected = False
@@ -64,7 +64,7 @@ class TI:
             print(i)
             time.sleep(0.01)
 
-    def _initialize(self, config_file='./1642config.cfg'):
+    def _initialize(self, config_file=r'E:\labotory\mmwave\project\OpenRadar\code\profile_3d_aop_3s.cfg'):
         config = [line.rstrip('\r\n') for line in open(config_file)]
         if self.connected:
             self._configure_radar(config)

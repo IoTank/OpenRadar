@@ -1,7 +1,7 @@
 import setuptools
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
+# with open("README.md", "r") as fh:
+#     long_description = fh.read()
 
 def versionDev():
     from setuptools_scm.version import get_local_dirty_tag
@@ -16,7 +16,7 @@ setuptools.setup(
     author="Edwin Pan, Jingning Tang, Dashiell Kosaka, Arjun Gupta, Ruihao Yao",
     author_email="presenseradar@gmail.com",
     description="A mmWave radar data processing library",
-    long_description=long_description,
+    #long_description=long_description,
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),
     classifiers=[
